@@ -207,6 +207,7 @@ module.exports = Element.extend({
 		return vm.width * Math.abs(vm.y - vm.base);
 	},
 
+/*
 	tooltipPosition: function() {
 		var vm = this._view;
 		return {
@@ -214,4 +215,5 @@ module.exports = Element.extend({
 			y: vm.y
 		};
 	}
+*/
 });

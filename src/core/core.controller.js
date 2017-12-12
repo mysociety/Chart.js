@@ -58,8 +58,8 @@ module.exports = function(Chart) {
 		chart.ensureScalesHaveIDs();
 		chart.buildOrUpdateScales();
 		// Tooltip
-		chart.tooltip._options = newOptions.tooltips;
-		chart.tooltip.initialize();
+		// chart.tooltip._options = newOptions.tooltips;
+		// chart.tooltip.initialize();
 	}
 
 	function positionIsHorizontal(position) {
@@ -148,7 +148,7 @@ module.exports = function(Chart) {
 			// Make sure scales have IDs and are built before we build any controllers.
 			me.ensureScalesHaveIDs();
 			me.buildOrUpdateScales();
-			me.initToolTip();
+			// me.initToolTip();
 
 			// After init plugin notification
 			plugins.notify(me, 'afterInit');
@@ -361,7 +361,7 @@ module.exports = function(Chart) {
 		*/
 		reset: function() {
 			this.resetElements();
-			this.tooltip.initialize();
+			// this.tooltip.initialize();
 		},
 
 		update: function(config) {
@@ -382,7 +382,7 @@ module.exports = function(Chart) {
 			}
 
 			// In case the entire data object changed
-			me.tooltip._data = me.data;
+			// me.tooltip._data = me.data;
 
 			// Make sure dataset controllers are updated and new controllers are reset
 			var newControllers = me.buildOrUpdateControllers();
@@ -405,7 +405,7 @@ module.exports = function(Chart) {
 
 			// Need to reset tooltip in case it is displayed with elements that are removed
 			// after update.
-			me.tooltip.initialize();
+			// me.tooltip.initialize();
 
 			// Last active contains items that were previously in the tooltip.
 			// When we reset the tooltip, we need to clear it
@@ -568,7 +568,7 @@ module.exports = function(Chart) {
 			}
 
 			me.drawDatasets(easingValue);
-			me._drawTooltip(easingValue);
+			// me._drawTooltip(easingValue);
 
 			plugins.notify(me, 'afterDraw', [easingValue]);
 		},
@@ -585,7 +585,7 @@ module.exports = function(Chart) {
 				}
 			}
 
-			me.tooltip.transition(easingValue);
+			// me.tooltip.transition(easingValue);
 		},
 
 		/**
@@ -638,6 +638,7 @@ module.exports = function(Chart) {
 		 * hook, in which case, plugins will not be called on `afterTooltipDraw`.
 		 * @private
 		 */
+/*
 		_drawTooltip: function(easingValue) {
 			var me = this;
 			var tooltip = me.tooltip;
@@ -654,6 +655,7 @@ module.exports = function(Chart) {
 
 			plugins.notify(me, 'afterTooltipDraw', [args]);
 		},
+*/
 
 		// Get the single element that was clicked on
 		// @return : An object containing the dataset index and element index of the matching element. Also contains the rectangle that was draw
@@ -770,6 +772,7 @@ module.exports = function(Chart) {
 			return this.canvas.toDataURL.apply(this.canvas, arguments);
 		},
 
+/*
 		initToolTip: function() {
 			var me = this;
 			me.tooltip = new Chart.Tooltip({
@@ -779,6 +782,7 @@ module.exports = function(Chart) {
 				_options: me.options.tooltips
 			}, me);
 		},
+*/
 
 		/**
 		 * @private
@@ -840,7 +844,7 @@ module.exports = function(Chart) {
 		 */
 		eventHandler: function(e) {
 			var me = this;
-			var tooltip = me.tooltip;
+			// var tooltip = me.tooltip;
 
 			if (plugins.notify(me, 'beforeEvent', [e]) === false) {
 				return;
@@ -855,11 +859,11 @@ module.exports = function(Chart) {
 			// the tooltip should be the source of change
 			// Animation check workaround:
 			// tooltip._start will be null when tooltip isn't animating
-			if (tooltip) {
-				changed = tooltip._start
-					? tooltip.handleEvent(e)
-					: changed | tooltip.handleEvent(e);
-			}
+			// if (tooltip) {
+			// 	changed = tooltip._start
+			// 		? tooltip.handleEvent(e)
+			// 		: changed | tooltip.handleEvent(e);
+			// }
 
 			plugins.notify(me, 'afterEvent', [e]);
 

@@ -21,7 +21,7 @@ require('./core/core.datasetController')(Chart);
 require('./core/core.layoutService')(Chart);
 require('./core/core.scaleService')(Chart);
 require('./core/core.scale')(Chart);
-require('./core/core.tooltip')(Chart);
+// require('./core/core.tooltip')(Chart);
 
 require('./scales/scale.linearbase')(Chart);
 require('./scales/scale.category')(Chart);

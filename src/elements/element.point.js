@@ -54,6 +54,7 @@ module.exports = Element.extend({
 		return Math.PI * Math.pow(this._view.radius, 2);
 	},
 
+/*
 	tooltipPosition: function() {
 		var vm = this._view;
 		return {
@@ -62,6 +63,7 @@ module.exports = Element.extend({
 			padding: vm.radius + vm.borderWidth
 		};
 	},
+*/
 
 	draw: function(chartArea) {
 		var vm = this._view;

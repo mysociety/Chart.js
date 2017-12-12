@@ -68,6 +68,7 @@ defaults._set('horizontalBar', {
 		}
 	},
 
+/*
 	tooltips: {
 		callbacks: {
 			title: function(item, data) {
@@ -93,6 +94,7 @@ defaults._set('horizontalBar', {
 		mode: 'index',
 		axis: 'y'
 	}
+*/
 });
 
 /**

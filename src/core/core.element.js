@@ -98,12 +98,14 @@ helpers.extend(Element.prototype, {
 		return me;
 	},
 
+/*
 	tooltipPosition: function() {
 		return {
 			x: this._model.x,
 			y: this._model.y
 		};
 	},
+*/
 
 	hasValue: function() {
 		return helpers.isNumber(this._model.x) && helpers.isNumber(this._model.y);
