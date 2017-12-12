@@ -49,15 +49,15 @@ require('./charts/Chart.Line')(Chart);
 // require('./charts/Chart.Scatter')(Chart);
 
 // Loading built-it plugins
-var plugins = [];
-
-plugins.push(
-	require('./plugins/plugin.filler')(Chart),
-	require('./plugins/plugin.legend')(Chart),
-	require('./plugins/plugin.title')(Chart)
-);
-
-Chart.plugins.register(plugins);
+// var plugins = [];
+//
+// plugins.push(
+// 	require('./plugins/plugin.filler')(Chart),
+// 	require('./plugins/plugin.legend')(Chart),
+// 	require('./plugins/plugin.title')(Chart)
+// );
+//
+// Chart.plugins.register(plugins);
 
 Chart.platform.initialize();
 
