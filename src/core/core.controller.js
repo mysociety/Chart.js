@@ -248,6 +248,7 @@ module.exports = function(Chart) {
 				);
 			}
 
+/*
 			if (options.scale) {
 				items.push({
 					options: options.scale,
@@ -256,6 +257,7 @@ module.exports = function(Chart) {
 					dposition: 'chartArea'
 				});
 			}
+*/
 
 			helpers.each(items, function(item) {
 				var scaleOptions = item.options;

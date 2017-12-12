@@ -102,6 +102,7 @@ module.exports = {
 		 * @param dataRange {IRange} the range of the data
 		 * @returns {Array<Number>} array of tick values
 		 */
+/*
 		logarithmic: function(generationOptions, dataRange) {
 			var ticks = [];
 			var valueOrDefault = helpers.valueOrDefault;
@@ -146,6 +147,7 @@ module.exports = {
 
 			return ticks;
 		}
+*/
 	},
 
 	/**
@@ -197,6 +199,7 @@ module.exports = {
 			return tickString;
 		},
 
+/*
 		logarithmic: function(tickValue, index, ticks) {
 			var remain = tickValue / (Math.pow(10, Math.floor(helpers.log10(tickValue))));
 
@@ -207,5 +210,6 @@ module.exports = {
 			}
 			return '';
 		}
+*/
 	}
 };
