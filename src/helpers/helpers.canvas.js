@@ -25,6 +25,7 @@ var exports = module.exports = {
 	 * @param {Number} radius - The rounded amount (in pixels) for the four corners.
 	 * @todo handle `radius` as top-left, top-right, bottom-right, bottom-left array/object?
 	 */
+/*
 	roundedRect: function(ctx, x, y, width, height, radius) {
 		if (radius) {
 			var rx = Math.min(radius, width / 2);
@@ -43,10 +44,10 @@ var exports = module.exports = {
 			ctx.rect(x, y, width, height);
 		}
 	},
-
+*/
 	drawPoint: function(ctx, style, radius, x, y) {
 		var type, edgeLength, xOffset, yOffset, height, size;
-
+/*
 		if (style && typeof style === 'object') {
 			type = style.toString();
 			if (type === '[object HTMLImageElement]' || type === '[object HTMLCanvasElement]') {
@@ -54,18 +55,20 @@ var exports = module.exports = {
 				return;
 			}
 		}
-
+*/
 		if (isNaN(radius) || radius <= 0) {
 			return;
 		}
-
+/*
 		switch (style) {
 		// Default includes circle
 		default:
+*/
 			ctx.beginPath();
 			ctx.arc(x, y, radius, 0, Math.PI * 2);
 			ctx.closePath();
 			ctx.fill();
+/*
 			break;
 		case 'triangle':
 			ctx.beginPath();
@@ -148,7 +151,7 @@ var exports = module.exports = {
 			ctx.closePath();
 			break;
 		}
-
+*/
 		ctx.stroke();
 	},
 
@@ -207,8 +210,10 @@ helpers.clear = exports.clear;
  * @todo remove at version 3
  * @private
  */
+/*
 helpers.drawRoundedRectangle = function(ctx) {
 	ctx.beginPath();
 	exports.roundedRect.apply(exports, arguments);
 	ctx.closePath();
 };
+*/
