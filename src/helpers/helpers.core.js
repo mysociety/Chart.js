@@ -124,6 +124,7 @@ var helpers = {
 	 * @param {Array} a1 - The array to compare
 	 * @returns {Boolean}
 	 */
+/*
 	arrayEquals: function(a0, a1) {
 		var i, ilen, v0, v1;
 
@@ -147,7 +148,7 @@ var helpers = {
 
 		return true;
 	},
-
+*/
 	/**
 	 * Returns a deep copy of `source` without keeping references on objects and arrays.
 	 * @param {*} source - The value to clone.
