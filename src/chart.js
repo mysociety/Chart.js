@@ -40,10 +40,10 @@ require('./controllers/controller.line')(Chart);
 // require('./controllers/controller.radar')(Chart);
 // require('./controllers/controller.scatter')(Chart);
 
-require('./charts/Chart.Bar')(Chart);
+// require('./charts/Chart.Bar')(Chart);
 // require('./charts/Chart.Bubble')(Chart);
 // require('./charts/Chart.Doughnut')(Chart);
-require('./charts/Chart.Line')(Chart);
+// require('./charts/Chart.Line')(Chart);
 // require('./charts/Chart.PolarArea')(Chart);
 // require('./charts/Chart.Radar')(Chart);
 // require('./charts/Chart.Scatter')(Chart);
