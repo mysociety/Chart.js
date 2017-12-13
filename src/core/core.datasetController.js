@@ -138,12 +138,13 @@ module.exports = function(Chart) {
 		/**
 		 * @private
 		 */
+/*
 		destroy: function() {
 			if (this._data) {
 				unlistenArrayEvents(this._data, this);
 			}
 		},
-
+*/
 		createMetaDataset: function() {
 			var me = this;
 			var type = me.datasetElementType;
@@ -176,13 +177,13 @@ module.exports = function(Chart) {
 
 			meta.dataset = meta.dataset || me.createMetaDataset();
 		},
-
+/*
 		addElementAndReset: function(index) {
 			var element = this.createMetaData(index);
 			this.getMeta().data.splice(index, 0, element);
 			this.updateElement(element, index, true);
 		},
-
+*/
 		buildOrUpdateElements: function() {
 			var me = this;
 			var dataset = me.getDataset();
@@ -191,6 +192,7 @@ module.exports = function(Chart) {
 			// In order to correctly handle data addition/deletion animation (an thus simulate
 			// real-time charts), we need to monitor these data modifications and synchronize
 			// the internal meta data accordingly.
+/*
 			if (me._data !== data) {
 				if (me._data) {
 					// This case happens when the user replaced the data array instance.
@@ -200,10 +202,10 @@ module.exports = function(Chart) {
 				listenArrayEvents(data, me);
 				me._data = data;
 			}
-
 			// Re-sync meta data in case the user replaced the data array or if we missed
 			// any updates and so make sure that we handle number of datapoints changing.
 			me.resyncElements();
+*/
 		},
 
 		update: helpers.noop,
@@ -266,6 +268,7 @@ module.exports = function(Chart) {
 		/**
 		 * @private
 		 */
+/*
 		resyncElements: function() {
 			var me = this;
 			var meta = me.getMeta();
@@ -279,51 +282,58 @@ module.exports = function(Chart) {
 				me.insertElements(numMeta, numData - numMeta);
 			}
 		},
-
+*/
 		/**
 		 * @private
 		 */
+/*
 		insertElements: function(start, count) {
 			for (var i = 0; i < count; ++i) {
 				this.addElementAndReset(start + i);
 			}
 		},
-
+*/
 		/**
 		 * @private
 		 */
+/*
 		onDataPush: function() {
 			this.insertElements(this.getDataset().data.length - 1, arguments.length);
 		},
-
+*/
 		/**
 		 * @private
 		 */
+/*
 		onDataPop: function() {
 			this.getMeta().data.pop();
 		},
-
+*/
 		/**
 		 * @private
 		 */
+/*
 		onDataShift: function() {
 			this.getMeta().data.shift();
 		},
-
+*/
 		/**
 		 * @private
 		 */
+/*
 		onDataSplice: function(start, count) {
 			this.getMeta().data.splice(start, count);
 			this.insertElements(start, arguments.length - 2);
 		},
-
+*/
 		/**
 		 * @private
 		 */
+/*
 		onDataUnshift: function() {
 			this.insertElements(0, arguments.length);
 		}
+*/
 	});
 
 	Chart.DatasetController.extend = helpers.inherits;
