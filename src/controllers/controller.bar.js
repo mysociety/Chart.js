@@ -220,7 +220,7 @@ module.exports = function(Chart) {
 			var chart = me.chart;
 			var meta = me.getMeta();
 			var dataset = me.getDataset();
-			var custom = rectangle.custom || {};
+//			var custom = rectangle.custom || {};
 			var rectangleOptions = chart.options.elements.rectangle;
 
 			rectangle._xScale = me.getScaleForId(meta.xAxisID);
@@ -231,10 +231,10 @@ module.exports = function(Chart) {
 			rectangle._model = {
 				datasetLabel: dataset.label,
 				label: chart.data.labels[index],
-				borderSkipped: custom.borderSkipped ? custom.borderSkipped : rectangleOptions.borderSkipped,
-				backgroundColor: custom.backgroundColor ? custom.backgroundColor : helpers.valueAtIndexOrDefault(dataset.backgroundColor, index, rectangleOptions.backgroundColor),
-				borderColor: custom.borderColor ? custom.borderColor : helpers.valueAtIndexOrDefault(dataset.borderColor, index, rectangleOptions.borderColor),
-				borderWidth: custom.borderWidth ? custom.borderWidth : helpers.valueAtIndexOrDefault(dataset.borderWidth, index, rectangleOptions.borderWidth)
+				borderSkipped: rectangleOptions.borderSkipped,
+				backgroundColor: helpers.valueAtIndexOrDefault(dataset.backgroundColor, index, rectangleOptions.backgroundColor),
+				borderColor: helpers.valueAtIndexOrDefault(dataset.borderColor, index, rectangleOptions.borderColor),
+				borderWidth: helpers.valueAtIndexOrDefault(dataset.borderWidth, index, rectangleOptions.borderWidth)
 			};
 
 			me.updateElementGeometry(rectangle, index, reset);

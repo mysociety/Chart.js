@@ -50,7 +50,7 @@ module.exports = function(Chart) {
 
 			// Update Line
 			if (showLine) {
-				custom = line.custom || {};
+				// custom = line.custom || {};
 
 				// Compatibility: If the properties are defined with only the old name, use those values
 				if ((dataset.tension !== undefined) && (dataset.lineTension === undefined)) {
@@ -69,17 +69,17 @@ module.exports = function(Chart) {
 					// to https://github.com/chartjs/Chart.js/issues/2435#issuecomment-216718158
 					// This option gives lines the ability to span gaps
 					spanGaps: dataset.spanGaps ? dataset.spanGaps : options.spanGaps,
-					tension: custom.tension ? custom.tension : helpers.valueOrDefault(dataset.lineTension, lineElementOptions.tension),
-					backgroundColor: custom.backgroundColor ? custom.backgroundColor : (dataset.backgroundColor || lineElementOptions.backgroundColor),
-					borderWidth: custom.borderWidth ? custom.borderWidth : (dataset.borderWidth || lineElementOptions.borderWidth),
-					borderColor: custom.borderColor ? custom.borderColor : (dataset.borderColor || lineElementOptions.borderColor),
-					borderCapStyle: custom.borderCapStyle ? custom.borderCapStyle : (dataset.borderCapStyle || lineElementOptions.borderCapStyle),
-					borderDash: custom.borderDash ? custom.borderDash : (dataset.borderDash || lineElementOptions.borderDash),
-					borderDashOffset: custom.borderDashOffset ? custom.borderDashOffset : (dataset.borderDashOffset || lineElementOptions.borderDashOffset),
-					borderJoinStyle: custom.borderJoinStyle ? custom.borderJoinStyle : (dataset.borderJoinStyle || lineElementOptions.borderJoinStyle),
-					fill: custom.fill ? custom.fill : (dataset.fill !== undefined ? dataset.fill : lineElementOptions.fill),
-					steppedLine: custom.steppedLine ? custom.steppedLine : helpers.valueOrDefault(dataset.steppedLine, lineElementOptions.stepped),
-					cubicInterpolationMode: custom.cubicInterpolationMode ? custom.cubicInterpolationMode : helpers.valueOrDefault(dataset.cubicInterpolationMode, lineElementOptions.cubicInterpolationMode),
+					tension: helpers.valueOrDefault(dataset.lineTension, lineElementOptions.tension),
+					backgroundColor: (dataset.backgroundColor || lineElementOptions.backgroundColor),
+					borderWidth: (dataset.borderWidth || lineElementOptions.borderWidth),
+					borderColor: (dataset.borderColor || lineElementOptions.borderColor),
+					borderCapStyle: (dataset.borderCapStyle || lineElementOptions.borderCapStyle),
+					borderDash: (dataset.borderDash || lineElementOptions.borderDash),
+					borderDashOffset: (dataset.borderDashOffset || lineElementOptions.borderDashOffset),
+					borderJoinStyle: (dataset.borderJoinStyle || lineElementOptions.borderJoinStyle),
+					fill: (dataset.fill !== undefined ? dataset.fill : lineElementOptions.fill),
+					steppedLine: helpers.valueOrDefault(dataset.steppedLine, lineElementOptions.stepped),
+					cubicInterpolationMode: helpers.valueOrDefault(dataset.cubicInterpolationMode, lineElementOptions.cubicInterpolationMode),
 				};
 
 				line.pivot();
@@ -99,7 +99,7 @@ module.exports = function(Chart) {
 				points[i].pivot();
 			}
 		},
-
+/*
 		getPointBackgroundColor: function(point, index) {
 			var backgroundColor = this.chart.options.elements.point.backgroundColor;
 			var dataset = this.getDataset();
@@ -147,7 +147,7 @@ module.exports = function(Chart) {
 
 			return borderWidth;
 		},
-
+*/
 		updateElement: function(point, index, reset) {
 			var me = this;
 			var meta = me.getMeta();
@@ -185,9 +185,12 @@ module.exports = function(Chart) {
 				// Appearance
 				radius: custom.radius || helpers.valueAtIndexOrDefault(dataset.pointRadius, index, pointOptions.radius),
 				pointStyle: custom.pointStyle || helpers.valueAtIndexOrDefault(dataset.pointStyle, index, pointOptions.pointStyle),
-				backgroundColor: me.getPointBackgroundColor(point, index),
-				borderColor: me.getPointBorderColor(point, index),
-				borderWidth: me.getPointBorderWidth(point, index),
+//				backgroundColor: me.getPointBackgroundColor(point, index),
+//				borderColor: me.getPointBorderColor(point, index),
+//				borderWidth: me.getPointBorderWidth(point, index),
+				backgroundColor: dataset.pointBackgroundColor,
+				borderColor: dataset.borderColor,
+				borderWidth: dataset.borderWidth,
 				tension: meta.dataset._model ? meta.dataset._model.tension : 0,
 				steppedLine: meta.dataset._model ? meta.dataset._model.steppedLine : false,
 				// Tooltip
