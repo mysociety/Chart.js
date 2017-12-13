@@ -203,7 +203,7 @@ module.exports = function(Chart) {
 			var sumPos = 0;
 			var sumNeg = 0;
 			var i, ds, dsMeta;
-
+/*
 			if (yScale.options.stacked) {
 				for (i = 0; i < datasetIndex; i++) {
 					ds = chart.data.datasets[i];
@@ -224,7 +224,7 @@ module.exports = function(Chart) {
 				}
 				return yScale.getPixelForValue(sumPos + rightValue);
 			}
-
+*/
 			return yScale.getPixelForValue(value);
 		},
 

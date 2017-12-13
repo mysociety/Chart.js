@@ -297,6 +297,7 @@ module.exports = function(Chart) {
 		 * @returns {Array} The stack list
 		 * @private
 		 */
+/*
 		_getStacks: function(last) {
 			var me = this;
 			var chart = me.chart;
@@ -318,15 +319,16 @@ module.exports = function(Chart) {
 
 			return stacks;
 		},
-
+*/
 		/**
 		 * Returns the effective number of stacks based on groups and bar visibility.
 		 * @private
 		 */
+/*
 		getStackCount: function() {
 			return this._getStacks().length;
 		},
-
+*/
 		/**
 		 * Returns the stack index for the given dataset based on groups and bar visibility.
 		 * @param {Number} [datasetIndex] - The dataset index
@@ -334,6 +336,7 @@ module.exports = function(Chart) {
 		 * @returns {Number} The stack index
 		 * @private
 		 */
+/*
 		getStackIndex: function(datasetIndex, name) {
 			var stacks = this._getStacks(datasetIndex);
 			var index = (name !== undefined)
@@ -344,6 +347,7 @@ module.exports = function(Chart) {
 				? stacks.length - 1
 				: index;
 		},
+*/
 
 		/**
 		 * @private
@@ -351,7 +355,7 @@ module.exports = function(Chart) {
 		getRuler: function() {
 			var me = this;
 			var scale = me.getIndexScale();
-			var stackCount = me.getStackCount();
+			var stackCount = 1; // me.getStackCount();
 			var datasetIndex = me.index;
 			var isHorizontal = scale.isHorizontal();
 			var start = isHorizontal ? scale.left : scale.top;
@@ -392,7 +396,7 @@ module.exports = function(Chart) {
 			var stack = meta.stack;
 			var start = 0;
 			var i, imeta, ivalue, base, head, size;
-
+/*
 			if (stacked || (stacked === undefined && stack !== undefined)) {
 				for (i = 0; i < datasetIndex; ++i) {
 					imeta = chart.getDatasetMeta(i);
@@ -409,7 +413,7 @@ module.exports = function(Chart) {
 					}
 				}
 			}
-
+*/
 			base = scale.getPixelForValue(start);
 			head = scale.getPixelForValue(start + value);
 			size = (head - base) / 2;
@@ -432,7 +436,7 @@ module.exports = function(Chart) {
 				? computeFlexCategoryTraits(index, ruler, options)
 				: computeFitCategoryTraits(index, ruler, options);
 
-			var stackIndex = me.getStackIndex(datasetIndex, me.getMeta().stack);
+			var stackIndex = 0; // me.getStackIndex(datasetIndex, me.getMeta().stack);
 			var center = range.start + (range.chunk * stackIndex) + (range.chunk / 2);
 			var size = Math.min(
 				helpers.valueOrDefault(options.maxBarThickness, Infinity),

@@ -32,7 +32,7 @@ module.exports = function(Chart) {
 			// First Calculate the range
 			me.min = null;
 			me.max = null;
-
+/*
 			var hasStacks = opts.stacked;
 			if (hasStacks === undefined) {
 				helpers.each(datasets, function(dataset, datasetIndex) {
@@ -101,6 +101,7 @@ module.exports = function(Chart) {
 				});
 
 			} else {
+*/
 				helpers.each(datasets, function(dataset, datasetIndex) {
 					var meta = chart.getDatasetMeta(datasetIndex);
 					if (chart.isDatasetVisible(datasetIndex) && IDMatches(meta)) {
@@ -124,8 +125,9 @@ module.exports = function(Chart) {
 						});
 					}
 				});
+/*
 			}
-
+*/
 			me.min = isFinite(me.min) && !isNaN(me.min) ? me.min : DEFAULT_MIN;
 			me.max = isFinite(me.max) && !isNaN(me.max) ? me.max : DEFAULT_MAX;
 
