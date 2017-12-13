@@ -170,15 +170,17 @@ module.exports = function(Chart) {
 				}
 			}
 		},
+/*
 		beforeUpdate: function() {
 			helpers.callback(this.options.beforeUpdate, [this]);
 		},
+*/
 		update: function(maxWidth, maxHeight, margins) {
 			var me = this;
 			var i, ilen, labels, label, ticks, tick;
 
 			// Update Lifecycle - Probably don't want to ever extend or overwrite this function ;)
-			me.beforeUpdate();
+//			me.beforeUpdate();
 
 			// Absorb the master measurements
 			me.maxWidth = maxWidth;
@@ -192,14 +194,14 @@ module.exports = function(Chart) {
 			me.longestTextCache = me.longestTextCache || {};
 
 			// Dimensions
-			me.beforeSetDimensions();
+//			me.beforeSetDimensions();
 			me.setDimensions();
-			me.afterSetDimensions();
+//			me.afterSetDimensions();
 
 			// Data min/max
-			me.beforeDataLimits();
+//			me.beforeDataLimits();
 			me.determineDataLimits();
-			me.afterDataLimits();
+//			me.afterDataLimits();
 
 			// Ticks - `this.ticks` is now DEPRECATED!
 			// Internal ticks are now stored as objects in the PRIVATE `this._ticks` member
@@ -208,22 +210,22 @@ module.exports = function(Chart) {
 			// without unexpected breaking changes. If you need to access the scale ticks,
 			// use scale.getTicks() instead.
 
-			me.beforeBuildTicks();
+//			me.beforeBuildTicks();
 
 			// New implementations should return an array of objects but for BACKWARD COMPAT,
 			// we still support no return (`this.ticks` internally set by calling this method).
 			ticks = me.buildTicks() || [];
 
-			me.afterBuildTicks();
+//			me.afterBuildTicks();
 
-			me.beforeTickToLabelConversion();
+//			me.beforeTickToLabelConversion();
 
 			// New implementations should return the formatted tick labels but for BACKWARD
 			// COMPAT, we still support no return (`this.ticks` internally changed by calling
 			// this method and supposed to contain only string values).
 			labels = me.convertTicksToLabels(ticks) || me.ticks;
 
-			me.afterTickToLabelConversion();
+//			me.afterTickToLabelConversion();
 
 			me.ticks = labels;   // BACKWARD COMPATIBILITY
 
@@ -246,19 +248,20 @@ module.exports = function(Chart) {
 			me._ticks = ticks;
 
 			// Tick Rotation
-			me.beforeCalculateTickRotation();
+//			me.beforeCalculateTickRotation();
 			me.calculateTickRotation();
-			me.afterCalculateTickRotation();
+//			me.afterCalculateTickRotation();
 			// Fit
-			me.beforeFit();
+//			me.beforeFit();
 			me.fit();
-			me.afterFit();
+//			me.afterFit();
 			//
-			me.afterUpdate();
+//			me.afterUpdate();
 
 			return me.minSize;
 
 		},
+/*
 		afterUpdate: function() {
 			helpers.callback(this.options.afterUpdate, [this]);
 		},
@@ -268,7 +271,8 @@ module.exports = function(Chart) {
 		beforeSetDimensions: function() {
 			helpers.callback(this.options.beforeSetDimensions, [this]);
 		},
-		setDimensions: function() {
+*/
+        setDimensions: function() {
 			var me = this;
 			// Set the unconstrained dimension before label rotation
 			if (me.isHorizontal()) {
@@ -290,6 +294,7 @@ module.exports = function(Chart) {
 			me.paddingRight = 0;
 			me.paddingBottom = 0;
 		},
+/*
 		afterSetDimensions: function() {
 			helpers.callback(this.options.afterSetDimensions, [this]);
 		},
@@ -298,7 +303,9 @@ module.exports = function(Chart) {
 		beforeDataLimits: function() {
 			helpers.callback(this.options.beforeDataLimits, [this]);
 		},
-		determineDataLimits: helpers.noop,
+*/
+        determineDataLimits: helpers.noop,
+/*
 		afterDataLimits: function() {
 			helpers.callback(this.options.afterDataLimits, [this]);
 		},
@@ -307,7 +314,9 @@ module.exports = function(Chart) {
 		beforeBuildTicks: function() {
 			helpers.callback(this.options.beforeBuildTicks, [this]);
 		},
+*/
 		buildTicks: helpers.noop,
+/*
 		afterBuildTicks: function() {
 			helpers.callback(this.options.afterBuildTicks, [this]);
 		},
@@ -315,12 +324,14 @@ module.exports = function(Chart) {
 		beforeTickToLabelConversion: function() {
 			helpers.callback(this.options.beforeTickToLabelConversion, [this]);
 		},
+*/
 		convertTicksToLabels: function() {
 			var me = this;
 			// Convert ticks to strings
 			var tickOpts = me.options.ticks;
 			me.ticks = me.ticks.map(tickOpts.userCallback || tickOpts.callback, this);
 		},
+/*
 		afterTickToLabelConversion: function() {
 			helpers.callback(this.options.afterTickToLabelConversion, [this]);
 		},
@@ -330,6 +341,7 @@ module.exports = function(Chart) {
 		beforeCalculateTickRotation: function() {
 			helpers.callback(this.options.beforeCalculateTickRotation, [this]);
 		},
+*/
 		calculateTickRotation: function() {
 			var me = this;
 			var context = me.ctx;
@@ -370,6 +382,7 @@ module.exports = function(Chart) {
 
 			me.labelRotation = labelRotation;
 		},
+/*
 		afterCalculateTickRotation: function() {
 			helpers.callback(this.options.afterCalculateTickRotation, [this]);
 		},
@@ -379,6 +392,7 @@ module.exports = function(Chart) {
 		beforeFit: function() {
 			helpers.callback(this.options.beforeFit, [this]);
 		},
+*/
 		fit: function() {
 			var me = this;
 			// Reset
@@ -500,11 +514,11 @@ module.exports = function(Chart) {
 				me.paddingBottom = Math.max(me.paddingBottom - me.margins.bottom, 0);
 			}
 		},
-
+/*
 		afterFit: function() {
 			helpers.callback(this.options.afterFit, [this]);
 		},
-
+*/
 		// Shared Methods
 		isHorizontal: function() {
 			return this.options.position === 'top' || this.options.position === 'bottom';
