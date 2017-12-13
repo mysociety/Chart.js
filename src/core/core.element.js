@@ -1,6 +1,6 @@
 'use strict';
 
-var color = require('chartjs-color');
+// var color = require('chartjs-color');
 var helpers = require('../helpers/index');
 
 function interpolate(start, view, model, ease) {
@@ -33,6 +33,7 @@ function interpolate(start, view, model, ease) {
 		type = typeof target;
 
 		if (type === typeof origin) {
+/*
 			if (type === 'string') {
 				c0 = color(origin);
 				if (c0.valid) {
@@ -42,7 +43,9 @@ function interpolate(start, view, model, ease) {
 						continue;
 					}
 				}
-			} else if (type === 'number' && isFinite(origin) && isFinite(target)) {
+			} else
+*/
+            if (type === 'number' && isFinite(origin) && isFinite(target)) {
 				view[key] = origin + (target - origin) * ease;
 				continue;
 			}

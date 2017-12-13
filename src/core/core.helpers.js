@@ -2,7 +2,7 @@
 /* global document: false */
 'use strict';
 
-var color = require('chartjs-color');
+// var color = require('chartjs-color');
 var defaults = require('./core.defaults');
 var helpers = require('../helpers/index');
 
@@ -582,24 +582,22 @@ module.exports = function(Chart) {
 		return numberOfLines;
 	};
 
+/*
 	helpers.color = !color ?
 		function(value) {
 			console.error('Color.js not found!');
 			return value;
 		} :
 		function(value) {
-			/* global CanvasGradient */
+			/* global CanvasGradient /
 			if (value instanceof CanvasGradient) {
 				value = defaults.global.defaultColor;
 			}
 
 			return color(value);
 		};
-
+*/
 	helpers.getHoverColor = function(colorValue) {
-		/* global CanvasPattern */
-		return (colorValue instanceof CanvasPattern) ?
-			colorValue :
-			helpers.color(colorValue).saturate(0.5).darken(0.1).rgbString();
+		return colorValue;
 	};
 };
