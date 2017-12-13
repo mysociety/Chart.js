@@ -55,8 +55,8 @@ defaults._set('scale', {
 		padding: 0,
 		reverse: false,
 		display: true,
-		autoSkip: true,
-		autoSkipPadding: 0,
+//		autoSkip: true,
+//		autoSkipPadding: 0,
 		labelOffset: 0,
 		// We pass through arrays to be rendered as multiline labels, we convert Others to strings here.
 		callback: Ticks.formatters.values,
@@ -641,6 +641,7 @@ module.exports = function(Chart) {
 		 * Returns a subset of ticks to be plotted to avoid overlapping labels.
 		 * @private
 		 */
+/*
 		_autoSkip: function(ticks) {
 			var skipRatio;
 			var me = this;
@@ -686,6 +687,7 @@ module.exports = function(Chart) {
 			}
 			return result;
 		},
+*/
 
 		// Actually draw the scale on the canvas
 		// @param {rectangle} chartArea : the area of the chart to draw full grid lines on
@@ -706,7 +708,7 @@ module.exports = function(Chart) {
 			var isRotated = me.labelRotation !== 0;
 			var isHorizontal = me.isHorizontal();
 
-			var ticks = optionTicks.autoSkip ? me._autoSkip(me.getTicks()) : me.getTicks();
+			var ticks = me.getTicks();
 			var tickFontColor = helpers.valueOrDefault(optionTicks.fontColor, globalDefaults.defaultFontColor);
 			var tickFont = parseFontOptions(optionTicks);
 			var majorTickFontColor = helpers.valueOrDefault(optionMajorTicks.fontColor, globalDefaults.defaultFontColor);
