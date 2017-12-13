@@ -4,9 +4,9 @@ var defaults = require('./core.defaults');
 
 defaults._set('global', {
 	responsive: true,
-	responsiveAnimationDuration: 0,
+//	responsiveAnimationDuration: 0,
 	maintainAspectRatio: true,
-	events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+//	events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
 /*
 	hover: {
 		onHover: null,
@@ -15,7 +15,7 @@ defaults._set('global', {
 		animationDuration: 400
 	},
 */
-	onClick: null,
+//	onClick: null,
 	defaultColor: 'rgba(0,0,0,0.1)',
 	defaultFontColor: '#666',
 	defaultFontFamily: "'Helvetica Neue', 'Helvetica', 'Arial', sans-serif",

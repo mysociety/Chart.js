@@ -202,7 +202,7 @@ module.exports = function(Chart) {
 				}
 
 				me.stop();
-				me.update(me.options.responsiveAnimationDuration);
+				me.update(0); // me.options.responsiveAnimationDuration);
 			}
 		},
 
