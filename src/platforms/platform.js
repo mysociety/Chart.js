@@ -1,22 +1,22 @@
 'use strict';
 
 var helpers = require('../helpers/index');
-var basic = require('./platform.basic');
+// var basic = require('./platform.basic');
 var dom = require('./platform.dom');
 
 // @TODO Make possible to select another platform at build time.
-var implementation = dom._enabled ? dom : basic;
+// var implementation = dom._enabled ? dom : basic;
 
 /**
  * @namespace Chart.platform
  * @see https://chartjs.gitbooks.io/proposals/content/Platform.html
  * @since 2.4.0
  */
-module.exports = helpers.extend({
+module.exports = dom; // helpers.extend({
 	/**
 	 * @since 2.7.0
 	 */
-	initialize: function() {},
+//	initialize: function() {},
 
 	/**
 	 * Called at chart construction time, returns a context2d instance implementing
@@ -25,7 +25,7 @@ module.exports = helpers.extend({
 	 * @param {Object} options - The chart options
 	 * @returns {CanvasRenderingContext2D} context2d instance
 	 */
-	acquireContext: function() {},
+//	acquireContext: function() {},
 
 	/**
 	 * Called at chart destruction time, releases any resources associated to the context
@@ -33,7 +33,7 @@ module.exports = helpers.extend({
 	 * @param {CanvasRenderingContext2D} context - The context2d instance
 	 * @returns {Boolean} true if the method succeeded, else false
 	 */
-	releaseContext: function() {},
+//	releaseContext: function() {},
 
 	/**
 	 * Registers the specified listener on the given chart.
@@ -42,7 +42,7 @@ module.exports = helpers.extend({
 	 * @param {Function} listener - Receives a notification (an object that implements
 	 * the {@link IEvent} interface) when an event of the specified type occurs.
 	 */
-	addEventListener: function() {},
+//	addEventListener: function() {},
 
 	/**
 	 * Removes the specified listener previously registered with addEventListener.
@@ -50,9 +50,9 @@ module.exports = helpers.extend({
 	 * @param {String} type - The ({@link IEvent}) type to remove
 	 * @param {Function} listener - The listener function to remove from the event target.
 	 */
-	removeEventListener: function() {}
+//	removeEventListener: function() {}
 
-}, implementation);
+// }, implementation);
 
 /**
  * @interface IPlatform

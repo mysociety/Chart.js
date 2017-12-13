@@ -317,7 +317,7 @@ module.exports = {
 	 * Currently used by platform.js to select the proper implementation.
 	 * @private
 	 */
-	_enabled: typeof window !== 'undefined' && typeof document !== 'undefined',
+//	_enabled: typeof window !== 'undefined' && typeof document !== 'undefined',
 
 	initialize: function() {
 		var keyframes = 'from{opacity:0.99}to{opacity:1}';
@@ -366,7 +366,7 @@ module.exports = {
 
 		return null;
 	},
-
+/*
 	releaseContext: function(context) {
 		var canvas = context.canvas;
 		if (!canvas[EXPANDO_KEY]) {
@@ -395,7 +395,7 @@ module.exports = {
 
 		delete canvas[EXPANDO_KEY];
 	},
-
+*/
 	addEventListener: function(chart, type, listener) {
 		var canvas = chart.canvas;
 		if (type === 'resize') {
@@ -403,7 +403,7 @@ module.exports = {
 			addResizeListener(canvas, listener, chart);
 			return;
 		}
-
+/*
 		var expando = listener[EXPANDO_KEY] || (listener[EXPANDO_KEY] = {});
 		var proxies = expando.proxies || (expando.proxies = {});
 		var proxy = proxies[chart.id + '_' + type] = function(event) {
@@ -411,8 +411,9 @@ module.exports = {
 		};
 
 		addEventListener(canvas, type, proxy);
+*/
 	},
-
+/*
 	removeEventListener: function(chart, type, listener) {
 		var canvas = chart.canvas;
 		if (type === 'resize') {
@@ -430,6 +431,7 @@ module.exports = {
 
 		removeEventListener(canvas, type, proxy);
 	}
+*/
 };
 
 // DEPRECATIONS
@@ -443,7 +445,7 @@ module.exports = {
  * @todo remove at version 3
  * @private
  */
-helpers.addEvent = addEventListener;
+// helpers.addEvent = addEventListener;
 
 /**
  * Provided for backward compatibility, use EventTarget.removeEventListener instead.
@@ -454,4 +456,4 @@ helpers.addEvent = addEventListener;
  * @todo remove at version 3
  * @private
  */
-helpers.removeEvent = removeEventListener;
+// helpers.removeEvent = removeEventListener;
