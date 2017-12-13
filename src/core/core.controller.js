@@ -2,7 +2,7 @@
 
 var defaults = require('./core.defaults');
 var helpers = require('../helpers/index');
-var Interaction = require('./core.interaction');
+// var Interaction = require('./core.interaction');
 var platform = require('../platforms/platform');
 
 module.exports = function(Chart) {
@@ -659,6 +659,7 @@ module.exports = function(Chart) {
 
 		// Get the single element that was clicked on
 		// @return : An object containing the dataset index and element index of the matching element. Also contains the rectangle that was draw
+/*
 		getElementAtEvent: function(e) {
 			return Interaction.modes.single(this, e);
 		},
@@ -683,7 +684,7 @@ module.exports = function(Chart) {
 		getDatasetAtEvent: function(e) {
 			return Interaction.modes.dataset(this, e, {intersect: true});
 		},
-
+*/
 		getDatasetMeta: function(datasetIndex) {
 			var me = this;
 			var dataset = me.data.datasets[datasetIndex];
@@ -756,7 +757,7 @@ module.exports = function(Chart) {
 			}
 
 			if (canvas) {
-				me.unbindEvents();
+//				me.unbindEvents();
 				helpers.canvas.clear(me);
 				platform.releaseContext(me.ctx);
 				me.canvas = null;
@@ -793,12 +794,12 @@ module.exports = function(Chart) {
 			var listener = function() {
 				me.eventHandler.apply(me, arguments);
 			};
-
+/*
 			helpers.each(me.options.events, function(type) {
 				platform.addEventListener(me, type, listener);
 				listeners[type] = listener;
 			});
-
+*/
 			// Elements used to detect size change should not be injected for non responsive charts.
 			// See https://github.com/chartjs/Chart.js/issues/2210
 			if (me.options.responsive) {
@@ -814,6 +815,7 @@ module.exports = function(Chart) {
 		/**
 		 * @private
 		 */
+/*
 		unbindEvents: function() {
 			var me = this;
 			var listeners = me._listeners;
@@ -838,10 +840,12 @@ module.exports = function(Chart) {
 				}
 			}
 		},
+*/
 
 		/**
 		 * @private
 		 */
+/*
 		eventHandler: function(e) {
 			var me = this;
 			// var tooltip = me.tooltip;
@@ -885,13 +889,14 @@ module.exports = function(Chart) {
 
 			return me;
 		},
-
+*/
 		/**
 		 * Handle an event
 		 * @private
 		 * @param {IEvent} event the event to handle
 		 * @return {Boolean} true if the chart needs to re-render
 		 */
+/*
 		handleEvent: function(e) {
 			var me = this;
 			var options = me.options || {};
@@ -935,6 +940,7 @@ module.exports = function(Chart) {
 
 			return changed;
 		}
+*/
 	});
 
 	/**

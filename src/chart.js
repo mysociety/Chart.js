@@ -11,7 +11,7 @@ require('./core/core.helpers')(Chart);
 Chart.defaults = require('./core/core.defaults');
 Chart.Element = require('./core/core.element');
 Chart.elements = require('./elements/index');
-Chart.Interaction = require('./core/core.interaction');
+// Chart.Interaction = require('./core/core.interaction');
 Chart.platform = require('./platforms/platform');
 
 // require('./core/core.plugin')(Chart);
