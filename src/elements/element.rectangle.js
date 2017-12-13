@@ -188,6 +188,7 @@ module.exports = Element.extend({
 		return mouseY >= bounds.top && mouseY <= bounds.bottom;
 	},
 */
+/*
 	getCenterPoint: function() {
 		var vm = this._view;
 		var x, y;
@@ -201,12 +202,11 @@ module.exports = Element.extend({
 
 		return {x: x, y: y};
 	},
-
 	getArea: function() {
 		var vm = this._view;
 		return vm.width * Math.abs(vm.y - vm.base);
 	},
-
+*/
 /*
 	tooltipPosition: function() {
 		var vm = this._view;

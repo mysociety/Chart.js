@@ -45,6 +45,7 @@ module.exports = Element.extend({
 	inXRange: xRange,
 	inYRange: yRange,
 */
+/*
 	getCenterPoint: function() {
 		var vm = this._view;
 		return {
@@ -52,11 +53,10 @@ module.exports = Element.extend({
 			y: vm.y
 		};
 	},
-
 	getArea: function() {
 		return Math.PI * Math.pow(this._view.radius, 2);
 	},
-
+*/
 /*
 	tooltipPosition: function() {
 		var vm = this._view;
