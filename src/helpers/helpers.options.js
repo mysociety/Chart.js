@@ -74,6 +74,7 @@ module.exports = {
 	 * at `index` become the new input.
 	 * @since 2.7.0
 	 */
+/*
 	resolve: function(inputs, context, index) {
 		var i, ilen, value;
 
@@ -93,4 +94,5 @@ module.exports = {
 			}
 		}
 	}
+*/
 };
