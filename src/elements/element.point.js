@@ -88,6 +88,7 @@ module.exports = Element.extend({
 		ctx.lineWidth = helpers.valueOrDefault(vm.borderWidth, defaults.global.elements.point.borderWidth);
 		ctx.fillStyle = vm.backgroundColor || defaultColor;
 
+/*
 		// Cliping for Points.
 		// going out from inner charArea?
 		if ((chartArea !== undefined) && ((model.x < chartArea.left) || (chartArea.right * errMargin < model.x) || (model.y < chartArea.top) || (chartArea.bottom * errMargin < model.y))) {
@@ -105,7 +106,7 @@ module.exports = Element.extend({
 			ctx.strokeStyle = color(ctx.strokeStyle).alpha(ratio).rgbString();
 			ctx.fillStyle = color(ctx.fillStyle).alpha(ratio).rgbString();
 		}
-
+*/
 		helpers.canvas.drawPoint(ctx, pointStyle, radius, x, y);
 	}
 });
