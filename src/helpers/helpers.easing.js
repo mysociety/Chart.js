@@ -235,7 +235,7 @@ var effects = {
 };
 
 module.exports = {
-	effects: effects
+//	effects: effects
 };
 
 // DEPRECATIONS
@@ -247,4 +247,4 @@ module.exports = {
  * @todo remove at version 3
  * @private
  */
-helpers.easingEffects = effects;
+// helpers.easingEffects = effects;
