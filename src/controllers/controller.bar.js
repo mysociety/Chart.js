@@ -5,10 +5,11 @@ var elements = require('../elements/index');
 var helpers = require('../helpers/index');
 
 defaults._set('bar', {
+/*
 	hover: {
 		mode: 'label'
 	},
-
+*/
 	scales: {
 		xAxes: [{
 			type: 'category',
@@ -33,11 +34,12 @@ defaults._set('bar', {
 });
 
 defaults._set('horizontalBar', {
+/*
 	hover: {
 		mode: 'index',
 		axis: 'y'
 	},
-
+*/
 	scales: {
 		xAxes: [{
 			type: 'linear',
@@ -463,7 +465,7 @@ module.exports = function(Chart) {
 
 			helpers.canvas.unclipArea(chart.ctx);
 		},
-
+/*
 		setHoverStyle: function(rectangle) {
 			var dataset = this.chart.data.datasets[rectangle._datasetIndex];
 			var index = rectangle._index;
@@ -486,6 +488,7 @@ module.exports = function(Chart) {
 			model.borderColor = custom.borderColor ? custom.borderColor : helpers.valueAtIndexOrDefault(dataset.borderColor, index, rectangleElementOptions.borderColor);
 			model.borderWidth = custom.borderWidth ? custom.borderWidth : helpers.valueAtIndexOrDefault(dataset.borderWidth, index, rectangleElementOptions.borderWidth);
 		}
+*/
 	});
 
 	Chart.controllers.horizontalBar = Chart.controllers.bar.extend({

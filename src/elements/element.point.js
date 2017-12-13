@@ -15,9 +15,11 @@ defaults._set('global', {
 			borderColor: defaultColor,
 			borderWidth: 1,
 			// Hover
+/*
 			hitRadius: 1,
 			hoverRadius: 4,
 			hoverBorderWidth: 1
+*/
 		}
 	}
 });

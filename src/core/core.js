@@ -7,12 +7,14 @@ defaults._set('global', {
 	responsiveAnimationDuration: 0,
 	maintainAspectRatio: true,
 	events: ['mousemove', 'mouseout', 'click', 'touchstart', 'touchmove'],
+/*
 	hover: {
 		onHover: null,
 		mode: 'nearest',
 		intersect: true,
 		animationDuration: 400
 	},
+*/
 	onClick: null,
 	defaultColor: 'rgba(0,0,0,0.1)',
 	defaultFontColor: '#666',

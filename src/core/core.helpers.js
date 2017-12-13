@@ -596,8 +596,8 @@ module.exports = function(Chart) {
 
 			return color(value);
 		};
-*/
 	helpers.getHoverColor = function(colorValue) {
 		return colorValue;
 	};
+*/
 };

@@ -7,11 +7,11 @@ var helpers = require('../helpers/index');
 defaults._set('line', {
 	showLines: true,
 	spanGaps: false,
-
+/*
 	hover: {
 		mode: 'label'
 	},
-
+*/
 	scales: {
 		xAxes: [{
 			type: 'category',
@@ -298,7 +298,7 @@ module.exports = function(Chart) {
 				points[i].draw(area);
 			}
 		},
-
+/*
 		setHoverStyle: function(point) {
 			// Point
 			var dataset = this.chart.data.datasets[point._datasetIndex];
@@ -329,5 +329,6 @@ module.exports = function(Chart) {
 			model.borderColor = me.getPointBorderColor(point, index);
 			model.borderWidth = me.getPointBorderWidth(point, index);
 		}
+*/
 	});
 };
