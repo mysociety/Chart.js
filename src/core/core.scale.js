@@ -15,7 +15,7 @@ defaults._set('scale', {
 		display: true,
 		color: 'rgba(0, 0, 0, 0.1)',
 		lineWidth: 1,
-		drawBorder: true,
+//		drawBorder: true,
 		drawOnChartArea: true,
 		drawTicks: true,
 		tickMarkLength: 10,
@@ -918,6 +918,7 @@ module.exports = function(Chart) {
 				context.restore();
 			}
 */
+/*
 			if (gridLines.drawBorder) {
 				// Draw the line at the edge of the axis
 				context.lineWidth = helpers.valueAtIndexOrDefault(gridLines.lineWidth, 0);
@@ -943,6 +944,7 @@ module.exports = function(Chart) {
 				context.lineTo(x2, y2);
 				context.stroke();
 			}
+*/
 		}
 	});
 };
