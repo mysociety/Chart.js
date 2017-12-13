@@ -156,9 +156,11 @@ module.exports = function(Chart) {
 				this.ticks.reverse();
 			}
 		},
+/*
 		getLabelForIndex: function(index, datasetIndex) {
 			return +this.getRightValue(this.chart.data.datasets[datasetIndex].data[index]);
 		},
+*/
 		// Utils
 		getPixelForValue: function(value) {
 			// This must be called after fit has been run so that

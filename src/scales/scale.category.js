@@ -47,7 +47,7 @@ module.exports = function(Chart) {
 			// If we are viewing some subset of labels, slice the original array
 			me.ticks = (me.minIndex === 0 && me.maxIndex === labels.length - 1) ? labels : labels.slice(me.minIndex, me.maxIndex + 1);
 		},
-
+/*
 		getLabelForIndex: function(index, datasetIndex) {
 			var me = this;
 			var data = me.chart.data;
@@ -58,7 +58,7 @@ module.exports = function(Chart) {
 			}
 			return me.ticks[index - me.minIndex];
 		},
-
+*/
 		// Used to get data value locations.  Value can either be an index or a numerical value
 		getPixelForValue: function(value, index) {
 			var me = this;
