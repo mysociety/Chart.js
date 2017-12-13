@@ -15,7 +15,7 @@ Chart.elements = require('./elements/index');
 Chart.platform = require('./platforms/platform');
 
 // require('./core/core.plugin')(Chart);
-require('./core/core.animation')(Chart);
+// require('./core/core.animation')(Chart);
 require('./core/core.controller')(Chart);
 require('./core/core.datasetController')(Chart);
 require('./core/core.layoutService')(Chart);

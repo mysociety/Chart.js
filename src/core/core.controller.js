@@ -163,7 +163,7 @@ module.exports = function(Chart) {
 
 		stop: function() {
 			// Stops any current animation loop occurring
-			Chart.animationService.cancelAnimation(this);
+//			Chart.animationService.cancelAnimation(this);
 			return this;
 		},
 
@@ -494,6 +494,7 @@ module.exports = function(Chart) {
 		render: function(config) {
 			var me = this;
 
+/*
 			if (!config || typeof config !== 'object') {
 				// backwards compatibility
 				config = {
@@ -508,13 +509,13 @@ module.exports = function(Chart) {
 			// if (plugins.notify(me, 'beforeRender') === false) {
 			// 	return;
 			// }
-
+*/
 			var animationOptions = me.options.animation;
+/*
 			var onComplete = function(animation) {
 				// plugins.notify(me, 'afterRender');
 				helpers.callback(animationOptions && animationOptions.onComplete, [animation], me);
 			};
-
 			if (animationOptions && ((typeof duration !== 'undefined' && duration !== 0) || (typeof duration === 'undefined' && animationOptions.duration !== 0))) {
 				var animation = new Chart.Animation({
 					numSteps: (duration || animationOptions.duration) / 16.66, // 60 fps
@@ -534,11 +535,15 @@ module.exports = function(Chart) {
 
 				Chart.animationService.addAnimation(me, animation, duration, lazy);
 			} else {
+*/
 				me.draw();
+				helpers.callback(animationOptions && animationOptions.onComplete, [], me);
 
 				// See https://github.com/chartjs/Chart.js/issues/3781
-				onComplete(new Chart.Animation({numSteps: 0, chart: me}));
+/*
+				onComplete();
 			}
+*/
 
 			return me;
 		},
