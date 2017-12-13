@@ -164,6 +164,7 @@ module.exports = function(Chart) {
 	helpers.toRadians = function(degrees) {
 		return degrees * (Math.PI / 180);
 	};
+/*
 	helpers.toDegrees = function(radians) {
 		return radians * (180 / Math.PI);
 	};
@@ -187,6 +188,7 @@ module.exports = function(Chart) {
 	helpers.distanceBetweenPoints = function(pt1, pt2) {
 		return Math.sqrt(Math.pow(pt2.x - pt1.x, 2) + Math.pow(pt2.y - pt1.y, 2));
 	};
+*/
 	helpers.aliasPixel = function(pixelWidth) {
 		return (pixelWidth % 2 === 0) ? 0 : 0.5;
 	};
@@ -375,6 +377,7 @@ module.exports = function(Chart) {
 			};
 	}());
 	// -- DOM methods
+/*
 	helpers.getRelativePosition = function(evt, chart) {
 		var mouseX, mouseY;
 		var e = evt.originalEvent || evt;
@@ -412,7 +415,7 @@ module.exports = function(Chart) {
 		};
 
 	};
-
+*/
 	// Private helper function to convert max-width/max-height values that may be percentages into a number
 	function parseMaxStyle(styleValue, node, parentProperty) {
 		var valueInPixels;
