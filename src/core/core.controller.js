@@ -6,7 +6,7 @@ var Interaction = require('./core.interaction');
 var platform = require('../platforms/platform');
 
 module.exports = function(Chart) {
-	var plugins = Chart.plugins;
+	// var plugins = Chart.plugins;
 
 	// Create a dictionary of chart types, to allow for extension of existing types
 	Chart.types = {};
@@ -134,7 +134,7 @@ module.exports = function(Chart) {
 			var me = this;
 
 			// Before init plugin notification
-			plugins.notify(me, 'beforeInit');
+			// plugins.notify(me, 'beforeInit');
 
 			helpers.retinaScale(me, me.options.devicePixelRatio);
 
@@ -151,7 +151,7 @@ module.exports = function(Chart) {
 			// me.initToolTip();
 
 			// After init plugin notification
-			plugins.notify(me, 'afterInit');
+			// plugins.notify(me, 'afterInit');
 
 			return me;
 		},
@@ -194,7 +194,7 @@ module.exports = function(Chart) {
 			if (!silent) {
 				// Notify any plugins about the resize
 				var newSize = {width: newWidth, height: newHeight};
-				plugins.notify(me, 'resize', [newSize]);
+				// plugins.notify(me, 'resize', [newSize]);
 
 				// Notify of resize
 				if (me.options.onResize) {
@@ -377,9 +377,9 @@ module.exports = function(Chart) {
 
 			updateConfig(me);
 
-			if (plugins.notify(me, 'beforeUpdate') === false) {
-				return;
-			}
+			// if (plugins.notify(me, 'beforeUpdate') === false) {
+			// 	return;
+			// }
 
 			// In case the entire data object changed
 			// me.tooltip._data = me.data;
@@ -412,7 +412,7 @@ module.exports = function(Chart) {
 			me.lastActive = [];
 
 			// Do this before render so that any plugins that need final scale updates can use it
-			plugins.notify(me, 'afterUpdate');
+			// plugins.notify(me, 'afterUpdate');
 
 			if (me._bufferedRender) {
 				me._bufferedRequest = {
@@ -433,9 +433,9 @@ module.exports = function(Chart) {
 		updateLayout: function() {
 			var me = this;
 
-			if (plugins.notify(me, 'beforeLayout') === false) {
-				return;
-			}
+			// if (plugins.notify(me, 'beforeLayout') === false) {
+			// 	return;
+			// }
 
 			Chart.layoutService.update(this, this.width, this.height);
 
@@ -446,8 +446,8 @@ module.exports = function(Chart) {
 			 * @todo remove at version 3
 			 * @private
 			 */
-			plugins.notify(me, 'afterScaleUpdate');
-			plugins.notify(me, 'afterLayout');
+			// plugins.notify(me, 'afterScaleUpdate');
+			// plugins.notify(me, 'afterLayout');
 		},
 
 		/**
@@ -458,15 +458,15 @@ module.exports = function(Chart) {
 		updateDatasets: function() {
 			var me = this;
 
-			if (plugins.notify(me, 'beforeDatasetsUpdate') === false) {
-				return;
-			}
+			// if (plugins.notify(me, 'beforeDatasetsUpdate') === false) {
+			// 	return;
+			// }
 
 			for (var i = 0, ilen = me.data.datasets.length; i < ilen; ++i) {
 				me.updateDataset(i);
 			}
 
-			plugins.notify(me, 'afterDatasetsUpdate');
+			// plugins.notify(me, 'afterDatasetsUpdate');
 		},
 
 		/**
@@ -482,13 +482,13 @@ module.exports = function(Chart) {
 				index: index
 			};
 
-			if (plugins.notify(me, 'beforeDatasetUpdate', [args]) === false) {
-				return;
-			}
+			// if (plugins.notify(me, 'beforeDatasetUpdate', [args]) === false) {
+			// 	return;
+			// }
 
 			meta.controller.update();
 
-			plugins.notify(me, 'afterDatasetUpdate', [args]);
+			// plugins.notify(me, 'afterDatasetUpdate', [args]);
 		},
 
 		render: function(config) {
@@ -505,13 +505,13 @@ module.exports = function(Chart) {
 			var duration = config.duration;
 			var lazy = config.lazy;
 
-			if (plugins.notify(me, 'beforeRender') === false) {
-				return;
-			}
+			// if (plugins.notify(me, 'beforeRender') === false) {
+			// 	return;
+			// }
 
 			var animationOptions = me.options.animation;
 			var onComplete = function(animation) {
-				plugins.notify(me, 'afterRender');
+				// plugins.notify(me, 'afterRender');
 				helpers.callback(animationOptions && animationOptions.onComplete, [animation], me);
 			};
 
@@ -554,9 +554,9 @@ module.exports = function(Chart) {
 
 			me.transition(easingValue);
 
-			if (plugins.notify(me, 'beforeDraw', [easingValue]) === false) {
-				return;
-			}
+			// if (plugins.notify(me, 'beforeDraw', [easingValue]) === false) {
+			// 	return;
+			// }
 
 			// Draw all the scales
 			helpers.each(me.boxes, function(box) {
@@ -570,7 +570,7 @@ module.exports = function(Chart) {
 			me.drawDatasets(easingValue);
 			// me._drawTooltip(easingValue);
 
-			plugins.notify(me, 'afterDraw', [easingValue]);
+			// plugins.notify(me, 'afterDraw', [easingValue]);
 		},
 
 		/**
@@ -596,9 +596,9 @@ module.exports = function(Chart) {
 		drawDatasets: function(easingValue) {
 			var me = this;
 
-			if (plugins.notify(me, 'beforeDatasetsDraw', [easingValue]) === false) {
-				return;
-			}
+			// if (plugins.notify(me, 'beforeDatasetsDraw', [easingValue]) === false) {
+			// 	return;
+			// }
 
 			// Draw datasets reversed to support proper line stacking
 			for (var i = (me.data.datasets || []).length - 1; i >= 0; --i) {
@@ -607,7 +607,7 @@ module.exports = function(Chart) {
 				}
 			}
 
-			plugins.notify(me, 'afterDatasetsDraw', [easingValue]);
+			// plugins.notify(me, 'afterDatasetsDraw', [easingValue]);
 		},
 
 		/**
@@ -624,13 +624,13 @@ module.exports = function(Chart) {
 				easingValue: easingValue
 			};
 
-			if (plugins.notify(me, 'beforeDatasetDraw', [args]) === false) {
-				return;
-			}
+			// if (plugins.notify(me, 'beforeDatasetDraw', [args]) === false) {
+			// 	return;
+			// }
 
 			meta.controller.draw(easingValue);
 
-			plugins.notify(me, 'afterDatasetDraw', [args]);
+			// plugins.notify(me, 'afterDatasetDraw', [args]);
 		},
 
 		/**
@@ -647,13 +647,13 @@ module.exports = function(Chart) {
 				easingValue: easingValue
 			};
 
-			if (plugins.notify(me, 'beforeTooltipDraw', [args]) === false) {
-				return;
-			}
+			// if (plugins.notify(me, 'beforeTooltipDraw', [args]) === false) {
+			// 	return;
+			// }
 
 			tooltip.draw();
 
-			plugins.notify(me, 'afterTooltipDraw', [args]);
+			// plugins.notify(me, 'afterTooltipDraw', [args]);
 		},
 */
 
@@ -763,7 +763,7 @@ module.exports = function(Chart) {
 				me.ctx = null;
 			}
 
-			plugins.notify(me, 'destroy');
+			// plugins.notify(me, 'destroy');
 
 			delete Chart.instances[me.id];
 		},
@@ -846,9 +846,9 @@ module.exports = function(Chart) {
 			var me = this;
 			// var tooltip = me.tooltip;
 
-			if (plugins.notify(me, 'beforeEvent', [e]) === false) {
-				return;
-			}
+			// if (plugins.notify(me, 'beforeEvent', [e]) === false) {
+			// 	return;
+			// }
 
 			// Buffer any update calls so that renders do not occur
 			me._bufferedRender = true;
@@ -865,7 +865,7 @@ module.exports = function(Chart) {
 			// 		: changed | tooltip.handleEvent(e);
 			// }
 
-			plugins.notify(me, 'afterEvent', [e]);
+			// plugins.notify(me, 'afterEvent', [e]);
 
 			var bufferedRequest = me._bufferedRequest;
 			if (bufferedRequest) {
