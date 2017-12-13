@@ -27,7 +27,7 @@ defaults._set('scale', {
 		borderDash: [],
 		borderDashOffset: 0.0
 	},
-
+/*
 	// scale label
 	scaleLabel: {
 		// display property
@@ -45,7 +45,7 @@ defaults._set('scale', {
 			bottom: 4
 		}
 	},
-
+*/
 	// label settings
 	ticks: {
 		beginAtZero: false,
@@ -405,7 +405,7 @@ module.exports = function(Chart) {
 
 			var opts = me.options;
 			var tickOpts = opts.ticks;
-			var scaleLabelOpts = opts.scaleLabel;
+//			var scaleLabelOpts = opts.scaleLabel;
 			var gridLineOpts = opts.gridLines;
 			var display = opts.display;
 			var isHorizontal = me.isHorizontal();
@@ -428,6 +428,7 @@ module.exports = function(Chart) {
 				minSize.height = me.maxHeight; // fill all the height
 			}
 
+/*
 			// Are we showing a title for the scale?
 			if (scaleLabelOpts.display && display) {
 				var scaleLabelLineHeight = parseLineHeight(scaleLabelOpts);
@@ -440,6 +441,7 @@ module.exports = function(Chart) {
 					minSize.width += deltaHeight;
 				}
 			}
+*/
 
 			// Don't bother fitting the ticks if we are not showing them
 			if (tickOpts.display && display) {
@@ -699,7 +701,7 @@ module.exports = function(Chart) {
 			var optionTicks = options.ticks.minor;
 			var optionMajorTicks = options.ticks.major || optionTicks;
 			var gridLines = options.gridLines;
-			var scaleLabel = options.scaleLabel;
+//			var scaleLabel = options.scaleLabel;
 
 			var isRotated = me.labelRotation !== 0;
 			var isHorizontal = me.isHorizontal();
@@ -711,10 +713,11 @@ module.exports = function(Chart) {
 			var majorTickFont = parseFontOptions(optionMajorTicks);
 
 			var tl = gridLines.drawTicks ? gridLines.tickMarkLength : 0;
-
+/*
 			var scaleLabelFontColor = helpers.valueOrDefault(scaleLabel.fontColor, globalDefaults.defaultFontColor);
 			var scaleLabelFont = parseFontOptions(scaleLabel);
 			var scaleLabelPadding = helpers.options.toPadding(scaleLabel.padding);
+*/
 			var labelRotationRadians = helpers.toRadians(me.labelRotation);
 
 			var itemsToDraw = [];
@@ -882,7 +885,7 @@ module.exports = function(Chart) {
 					context.restore();
 				}
 			});
-
+/*
 			if (scaleLabel.display) {
 				// Draw the scale label
 				var scaleLabelX;
@@ -914,7 +917,7 @@ module.exports = function(Chart) {
 				context.fillText(scaleLabel.labelString, 0, 0);
 				context.restore();
 			}
-
+*/
 			if (gridLines.drawBorder) {
 				// Draw the line at the edge of the axis
 				context.lineWidth = helpers.valueAtIndexOrDefault(gridLines.lineWidth, 0);
