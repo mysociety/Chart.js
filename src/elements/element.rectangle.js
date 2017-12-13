@@ -148,7 +148,7 @@ module.exports = Element.extend({
 		var vm = this._view;
 		return vm.base - vm.y;
 	},
-
+/*
 	inRange: function(mouseX, mouseY) {
 		var inRange = false;
 
@@ -187,7 +187,7 @@ module.exports = Element.extend({
 		var bounds = getBarBounds(this);
 		return mouseY >= bounds.top && mouseY <= bounds.bottom;
 	},
-
+*/
 	getCenterPoint: function() {
 		var vm = this._view;
 		var x, y;

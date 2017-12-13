@@ -35,6 +35,7 @@ function yRange(mouseY) {
 }
 
 module.exports = Element.extend({
+/*
 	inRange: function(mouseX, mouseY) {
 		var vm = this._view;
 		return vm ? ((Math.pow(mouseX - vm.x, 2) + Math.pow(mouseY - vm.y, 2)) < Math.pow(vm.hitRadius + vm.radius, 2)) : false;
@@ -43,7 +44,7 @@ module.exports = Element.extend({
 	inLabelRange: xRange,
 	inXRange: xRange,
 	inYRange: yRange,
-
+*/
 	getCenterPoint: function() {
 		var vm = this._view;
 		return {
