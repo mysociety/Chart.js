@@ -248,11 +248,13 @@ module.exports = function(Chart) {
 			function capControlPoint(pt, min, max) {
 				return Math.max(Math.min(pt, max), min);
 			}
+
 /*
 			if (meta.dataset._model.cubicInterpolationMode === 'monotone') {
-				helpers.splineCurveMonotone(points);
-			} else {
 */
+				helpers.splineCurveMonotone(points);
+/*
+			} else {
 				for (i = 0, ilen = points.length; i < ilen; ++i) {
 					point = points[i];
 					model = point._model;
@@ -267,9 +269,9 @@ module.exports = function(Chart) {
 					model.controlPointNextX = controlPoints.next.x;
 					model.controlPointNextY = controlPoints.next.y;
 				}
-/*
 			}
 */
+
 			if (me.chart.options.elements.line.capBezierPoints) {
 				for (i = 0, ilen = points.length; i < ilen; ++i) {
 					model = points[i]._model;

@@ -192,6 +192,7 @@ module.exports = function(Chart) {
 	helpers.aliasPixel = function(pixelWidth) {
 		return (pixelWidth % 2 === 0) ? 0 : 0.5;
 	};
+/*
 	helpers.splineCurve = function(firstPoint, middlePoint, afterPoint, t) {
 		// Props to Rob Spencer at scaled innovation for his post on splining between points
 		// http://scaledinnovation.com/analytics/splines/aboutSplines.html
@@ -226,7 +227,7 @@ module.exports = function(Chart) {
 			}
 		};
 	};
-/*
+*/
 	helpers.EPSILON = Number.EPSILON || 1e-14;
 	helpers.splineCurveMonotone = function(points) {
 		// This function calculates Bézier control points in a similar way than |splineCurve|,
@@ -319,7 +320,6 @@ module.exports = function(Chart) {
 			}
 		}
 	};
-*/
 	helpers.nextItem = function(collection, index, loop) {
 		if (loop) {
 			return index >= collection.length - 1 ? collection[0] : collection[index + 1];
